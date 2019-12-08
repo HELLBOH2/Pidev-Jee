@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" 
+				xmlns:f="http://java.sun.com/jsf/core" 
+				xmlns:h="http://java.sun.com/jsf/html" 
+				xmlns:ui="http://java.sun.com/jsf/facelets" 
+				template="/template/template.xhtml">
+
+	<ui:param name="page_name" value="Dashboard" /> 
+	<ui:define name="content">
+	
+		<h:panelGroup columns="3"> 
+		
+			<h:form> 
+			
+				 <h:dataTable value="#{CandidateOfferBean.listTorender}" var="test" border="1"
+				styleClass = "AutoTestTable"
+   				headerClass = "TestTableHeader"
+   				rowClasses = "TestTableOddRow,TestTableEvenRow">
+					<f:facet name="header">
+        				List of the Candidates
+   					 </f:facet>
+					<h:column>
+						<f:facet name="header">
+							<h:outputText value="Status" />
+						</f:facet>
+						<h:outputText value="#{test.status}" />
+					</h:column>
+					
+					
+						<h:column>
+						<f:facet name="header">
+							<h:outputText value="Email of Candidate" />
+						</f:facet>
+						<h:outputText value="#{test.aspNetUser.email}" />
+					</h:column>
+					
+						<h:column>
+						<f:facet name="header">
+							<h:outputText value="Title of Job" />
+						</f:facet>
+						<h:outputText value="#{test.jobOffer.title}" />
+					</h:column>
+			
+				
+
+					<h:column>
+						<f:facet name="header">
+							<h:outputText value="Invite To Quiz" />
+						</f:facet>
+						<h:commandButton id="Invite_Quiz_btn" value="Invite_Quiz" action="#{CandidateOfferBean.shoicetheQuiz(test)}" />
+					
+					</h:column>
+
+					 <f:facet name="footer">
+        				In total there are  Candidates.
+   					</f:facet>
+
+				</h:dataTable> 
+				 
+			</h:form> 
+		</h:panelGroup>
+   			 
+    	
+    	
+	</ui:define> 
+</ui:composition>

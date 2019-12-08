@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" 
+				xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html" 
+				xmlns:ui="http://java.sun.com/jsf/facelets" template="/template/template.xhtml"> 
+	<ui:param name="page_name" value="test answer" /> 
+	<ui:define name="menu"> 
+		<h3> enter your answers please </h3>
+			<h:form> 
+				<h1> déconnexion</h1> 
+				<h:commandButton id="btn_dec" value="deConnexion" action="#{loginBean.doLogout()}" /> 
+			</h:form>
+			
+			<p> </p>
+			
+			
+			
+			
+			<h:form id="answerForm"  prependId="false">
+				<h:panelGrid columns="2"> 	
+					<h:form> 
+						<h:outputText value="#{TestAnswer.nextQuestion.cr_Content}" />
+							<p> </p>
+						<h:selectOneRadio value = "#{TestAnswer.selectedAnswer}"> 
+   							<f:selectItems value="#{TestAnswer.responsesListPerQuestionMap}"  
+   							itemValue="" /> 
+						</h:selectOneRadio>
+						
+						<h:outputText value="the quesitons are finished you can confirm you answers if you want" id="confirmText"   prependId="false" />
+						<h:commandButton id="btn_next"  value="next question" action="#{TestAnswer.saveAnswer()}" />
+						
+						<p>   </p>
+						<div id="block_bott">
+							<h:commandButton id="btn_lanch" value="LanchTest " action="#{TestAnswer.LanchTest()}" />
+							<h:commandButton id="btn_cancel" value="cancel " action="#{TestAnswer.cancelAnswer()}" />  
+						</div>
+						<p></p>
+						
+						<div id="block_ajout_feedback"    >
+							<h:commandButton id="btn_r" value="create feedback " action="#" />
+						</div>
+						
+					</h:form>
+			 	</h:panelGrid>
+			
+			<p></p>
+			<p></p>
+			<p></p>
+			
+			</h:form>
+			
+			
+		
+  			 
+     		 	
+   			
+   		
+   			 
+   			
+	
+	</ui:define> 
+</ui:composition>

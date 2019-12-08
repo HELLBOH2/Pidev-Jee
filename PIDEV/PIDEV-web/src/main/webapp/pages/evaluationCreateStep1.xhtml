@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" 
+				xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html" 
+				xmlns:ui="http://java.sun.com/jsf/facelets" template="/template/template.xhtml">
+
+	<ui:param name="page_name" value="Dashboard" /> 
+	<ui:define name="content">
+	<link href="#{request.contextPath}/resources/css/cssEval.css" rel="stylesheet" type="text/css"></link>
+	 
+		<h:form id="step1Form" prependId="false" > 
+			<h4>Create evaluation test</h4> 
+			
+			<h3> step 1 </h3>
+			
+			<div > 
+				<h:outputText value="Description" /> 
+				<h:inputText value="#{step1.description}" /> 
+				
+				 
+				 <p></p>
+				
+				 <div id="buttonContain">
+				 	<h:commandButton id="btn_step1" value="next" action="#{step1.Step1Action()}" /> 
+					<h:message for="btn_step1"/>
+					
+					<h:commandButton id="abn_step1" value="abandonCreation" action="#{step1.AbandonnCreation()}" /> 
+					<h:message for="abn_step1"/>	
+					
+				 </div>
+				 
+			</div> 
+			 
+		</h:form>  
+		
+		
+		
+		
+	<!--  
+		<h:form id="step2Form"  style="display:#{eval.display2};"  prependId="false" > 
+			<h3> step 2 </h3>
+			<h:panelGrid columns="2"> 
+				<h:outputText value="choose the target of the test " /> 
+				<h:selectManyListbox value = "#{eval.selectedCollab}">
+					<f:selectItem itemLabel="Choisir collab" itemValue=""/>
+					
+					<f:selectItems value="#{eval.collabWithNameMap}"/>
+					
+				</h:selectManyListbox>
+				
+				 <h:commandButton value = "Submit" action = "#{eval.assignToAffectedList()}" />
+				  
+			</h:panelGrid> 
+		</h:form> 
+		
+		
+		
+		
+		
+		
+		
+	  	 <h:form id="step3Form"   style="display:#{eval.displayStep3};"  prependId="false" >
+				<h3> step 3 </h3>
+				<h4> define question </h4>
+			<h:panelGrid columns="2"> 
+				<h:outputText value=" question" /> 
+				<h:inputText value="#{eval.questionToCreateContent}" /> 
+				<h:outputText value=" define the number of its possible responses" /> 
+				<h:inputText value="#{eval.numberOfPossibleAnswers}" /> 
+				
+				<h:commandButton value = "confirm question" action = "#{eval.createAddQuestion()}" />
+				<h:commandButton value = "questions and responses are reafy" action = "#{eval.PrepareStep4()}" /> 
+				
+			</h:panelGrid>
+		</h:form> 
+		
+		
+		
+		<p> </p>
+		
+		 
+		 
+		 
+		<h:form id="step3FormAnswer" style="display:#{eval.displayResponses};" prependId="false">
+			<h:panelGrid columns="2"> 	
+				<h:outputText value=" enter your responses" />
+				
+			 	<ui:repeat var="q" value="#{eval.responses}">
+			 		<h:outputText value=" #{q.description}" /> 
+					<h:inputText value="#{q.content}" /> 
+					<p> </p>
+				</ui:repeat>
+			
+				<h:commandButton value = "confirm reponses and create another question" action = "#{eval.confirmQuestions_Responses()}" />
+				 
+				
+			</h:panelGrid>
+			
+		</h:form>
+
+
+		
+		<h:form id="step4Form"   style="display:#{eval.display4};" prependId="false" >
+				<h3> step 4 </h3>
+				<h4> define list of the guests  (to do)</h4>
+			<h:panelGrid columns="2"> 
+					
+				<h:outputText value="choose the target of the test " /> 
+				<h:selectManyListbox value = "#{eval.selectedGuest}">
+					<f:selectItem itemLabel="invite guest" itemValue=""/>
+					
+					<f:selectItems value="#{eval.collabWithNameMapGuest}"/>
+					
+				</h:selectManyListbox>
+				
+			<h:commandButton value = "skip this now"  action = "#{eval.PrepareStep5()}" />
+			<h:commandButton value = "next step"  action = "#{eval.PrepareStep5()}" />
+				
+				
+			</h:panelGrid>
+		</h:form>
+		
+		<h:form id="finalstep"   style="display:#{eval.display5};" prependId="false" >
+				<h3> do you confirm the test creation ? </h3>
+				
+			<h:panelGrid columns="2"> 
+				<h:outputText value="#{eval.finalmsg}" /> 
+				<h:commandButton value = "confirm creation"  action = "#{eval.finish()}" />
+				<h:commandButton value = " cancel creation" action = "#{eval.cancelCreation()}" />
+			</h:panelGrid>
+		</h:form>
+		
+			
+		 
+		
+		
+		
+		
+				
+		 
+    -->		
+    
+    	
+    	
+	</ui:define> 
+</ui:composition>

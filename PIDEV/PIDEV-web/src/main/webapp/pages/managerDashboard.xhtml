@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" 
+				xmlns:f="http://java.sun.com/jsf/core" 
+				xmlns:h="http://java.sun.com/jsf/html" 
+				xmlns:ui="http://java.sun.com/jsf/facelets" 
+				template="/template/template.xhtml"> 
+	<ui:param name="page_name" value="Dashboard" /> 
+	<ui:define name="menu"> 
+		
+			<h:form> 
+				<h1> déconnexion</h1> 
+				<h:outputText value="#{sessionScope.logger}" />
+				<h:commandButton id="btn_dec" value="deConnexion" action="#{loginBean.doLogout()}" />
+				
+				
+				 
+			</h:form>
+			
+			<p> </p>
+  			 <h:form>
+  			 
+  			 
+  			 
+  			 	<h:commandButton id ="link_create" action = "#{managerBean.create()}" value = "create Evaluation Test"></h:commandButton> 
+  			 
+  			 	<h:message for="link_create"/>
+  			 </h:form>
+     		 	
+   			
+   			<p></p>
+   		<h:form>
+   		
+  			 <h:commandButton id="btn_Auto" action = "#{managerBean.showAuto()}" value = "show created Quiz">
+     		</h:commandButton>
+     		<h:commandButton id="btn_Auto2" action = "#{CandidateOfferBean.showAuto2()}" value = "show List of candidates">
+     		</h:commandButton>
+     		<h:message for="btn_Auto"/>
+   		</h:form>	
+   		<h:form>
+   		
+     		<h:message for="btn_360"/>
+   		</h:form>	
+   		 
+   			 <p></p>
+   			 
+   			
+	
+	</ui:define> 
+</ui:composition>
