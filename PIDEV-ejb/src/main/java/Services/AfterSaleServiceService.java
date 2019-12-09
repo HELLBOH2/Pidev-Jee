@@ -46,6 +46,23 @@ public class AfterSaleServiceService implements AfterSaleRemote {
 		return em.createQuery("SELECT a FROM AfterSaleService a ORDER BY a.requestDate DESC", AfterSaleService.class).getResultList();  
 		
 	}
+	@Override
+	public List<AfterSaleService> getByDes(String a ,int id){
+		//int i="SELECT a.aspNetUser1 FROM Claim a WHERE 
+		return em.createQuery("SELECT a FROM AfterSaleService a WHERE a.aspNetUser="+id+" and a.description='"+a+"' ORDER BY a.requestDate DESC", AfterSaleService.class).getResultList();  
+		
+	}
+	@Override
+	public int getnb(int idpack) {
+		System.out.println("entreeeee  in service");
+		//return (User) em.createQuery("FROM User a WHERE  u.email = :email").setParameter(email, "Not Found");
+	    
+		
+		List<AfterSaleService> l =em.createQuery("SELECT a FROM AfterSaleService a  WHERE a.pack="+idpack+"ORDER BY a.requestDate DESC", AfterSaleService.class).getResultList();
+		
+		
+		return l.size();
+	}
 
 	
 
