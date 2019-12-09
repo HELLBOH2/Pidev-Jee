@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+  
+<title>Login</title>
+<script type="text/javascript">
+
+   function changeFunc() {
+    var selectBox = document.getElementById("mySelect");
+    var selectedValue = selectBox.options[selectBox.selectedIndex].value;
+    alert(selectedValue);
+   }
+
+  </script>
+</head>
+
+<body class="animsition">
+
+	<!-- DECLARATION DU TEMPLATE DONT LA PAGE EST CLIENTE -->
+	<ui:composition template="/template/layout.xhtml">
+
+	<!-- Redefinition de la zone 'content' du layout  -->
+		<ui:define name="content">
+			<f:view>
+			<div class="jp_first_sidebar_main_wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+                    <div class="row">
+
+
+
+
+
+
+
+
+
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="cc_featured_product_main_wrapper">
+                                <div class="jp_hiring_heading_wrapper jp_job_post_heading_wrapper">
+                                    <div>
+<h2>Edit</h2>
+
+
+<div class="jp_pricing_main_wrapper">
+    <div class="container">
+
+        <div class="row">
+
+            
+                <div class="form-horizontal">
+                    
+                    <hr />
+                    
+<h:form>
+                    <div class="form-group">
+                    <label for="exampleInputEmail1"><span style="color: blue;">
+                            Issue:</span></label>
+                              <div class="jp_form_location_wrapper">
+               
+                                      <h:selectOneMenu  value = "#{claimBean.issue}" class="form-control" onchange="myFunction()"> 
+<f:selectItem itemValue = "Bad Job Interview" itemLabel = "Bad Job Interview"  selected="selected" /> 
+   <f:selectItem itemValue = "Appointment Canceled" itemLabel = "Appointment Canceled" /> 
+   <f:selectItem itemValue = "Others" itemLabel = "Others" /> 
+</h:selectOneMenu>  
+
+</div>
+
+
+                        
+                           
+                           
+                            
+
+
+                    
+</div>
+  <div class="form-group">
+        <label for="h1"><span style="color: blue;">
+                            Description:</span></label>
+                             <div class="jp_form_location_wrapper">
+                               <h:inputTextarea  class="form-control" id="h1" value="#{claimBean.description}" aria-describedby="" placeholder=""/>
+                             </div> </div>                
+                   
+
+
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                         <h:commandButton action="#{claimBean.update()}" value="update"  class="btn btn-success" />
+                        </div>
+                    </div>
+                    </h:form>
+                   
+                     <p id="demo"></p>
+                </div>
+            
+            </div>
+        </div>
+    </div>
+
+            <div>
+            
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+ 
+
+            </f:view>
+            </ui:define>
+            </ui:composition>
+
+            </body>
+            </html>
+          
+            
