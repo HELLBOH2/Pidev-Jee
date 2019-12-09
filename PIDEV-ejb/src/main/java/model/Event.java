@@ -2,7 +2,6 @@ package model;
 
 import java.io.Serializable;
 import javax.persistence.*;
-import java.sql.Timestamp;
 import java.util.Date;
 
 
@@ -11,9 +10,17 @@ import java.util.Date;
  * 
  */
 @Entity
-@Table(name="Events")
-//@NamedQuery(name="Event.findAll", query="SELECT e FROM Event e")
 public class Event implements Serializable {
+	public Event(int eventId, Date dateEvent, String description, String image, String name, int number_P) {
+		super();
+		this.eventId = eventId;
+		this.dateEvent = dateEvent;
+		this.description = description;
+		this.image = image;
+		this.name = name;
+		this.number_P = number_P;
+	}
+
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -32,6 +39,16 @@ public class Event implements Serializable {
 	private String name;
 
 	private int number_P;
+
+	//bi-directional many-to-one association to AspNetUser
+//	@ManyToOne
+//	@JoinColumn(name="UserFK")
+//	private AspNetUser aspNetUser1;
+
+	//bi-directional many-to-one association to AspNetUser
+//	@ManyToOne
+//	@JoinColumn(name="UserFK")
+//	private AspNetUser aspNetUser2;
 
 	public Event() {
 	}
@@ -83,5 +100,21 @@ public class Event implements Serializable {
 	public void setNumber_P(int number_P) {
 		this.number_P = number_P;
 	}
+
+//	public AspNetUser getAspNetUser1() {
+//		return this.aspNetUser1;
+//	}
+
+//	public void setAspNetUser1(AspNetUser aspNetUser1) {
+//		this.aspNetUser1 = aspNetUser1;
+//	}
+
+//	public AspNetUser getAspNetUser2() {
+//		return this.aspNetUser2;
+//	}
+
+//	public void setAspNetUser2(AspNetUser aspNetUser2) {
+//		this.aspNetUser2 = aspNetUser2;
+//	}
 
 }

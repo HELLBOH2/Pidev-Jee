@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<head>
+<title>Edit Event</title>
+</head>
+<body>
+<h:form>
+<h:panelGrid columns="2">
+	<h:outputText value="Nom" />
+	<h:inputText value="#{eventBean.name}" />
+
+	<h:outputText value="Description" />
+	<h:inputText value="#{eventBean.description}" />
+
+	<h:outputText value="Date Debut" />
+		<h:message for="StartDate" style="color:red"></h:message>
+		<h:inputText id="StartDate" value="#{eventBean.dateEvent}"
+			required="true"
+			requiredMessage="you need to type in a date example: 10-10-2010">
+			<f:convertDateTime type="date" pattern="dd-MM-yyyy" />
+		</h:inputText>
+		
+	<h:outputText value="Nombre de place" />
+	<h:inputText value="#{eventBean.number_P}" />
+	
+	<h:outputText value="Image" />
+	<h:inputText value="#{eventBean.image}" />
+	   
+	<h:commandButton action="#{eventBean.mettreAjourEvent()}" value="Mettre A jour Event"/>
+</h:panelGrid>
+</h:form>
+</body>
+</html>

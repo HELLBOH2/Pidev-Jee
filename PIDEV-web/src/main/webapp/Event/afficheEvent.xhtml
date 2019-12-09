@@ -1,0 +1,57 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+	<head>
+		<title>Afficher Events</title>
+	</head>
+	<h:panelGroup columns="2">
+		<h:form>
+			<h:dataTable value="#{eventBean.events}" var="event" border="1">
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Name" />
+					</f:facet>
+					<h:outputText value="#{event.name}"></h:outputText>
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Date Event" />
+					</f:facet>
+					<h:outputText value="#{event.dateEvent}"></h:outputText>
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Description" />
+					</f:facet>
+					<h:outputText value="#{event.description}"></h:outputText>
+				</h:column>
+					<h:column>
+					<f:facet name="header">
+						<h:outputText value="Nombre de Place" />
+					</f:facet>
+					<h:outputText value="#{event.number_P}"></h:outputText>
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Image" />
+					</f:facet>
+					<h:outputText value="#{event.image}"></h:outputText>
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="delete" />
+					</f:facet>
+					<h:commandButton action="#{eventBean.deleteEvent(event.eventId)}" value="Supprimer"  />
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Update" />
+					</f:facet>
+					<h:commandButton action="#{eventBean.modifier(event)}"
+						value="Modifier" />
+				</h:column>				
+			</h:dataTable>
+		</h:form>
+	</h:panelGroup>
+</ui:composition>
