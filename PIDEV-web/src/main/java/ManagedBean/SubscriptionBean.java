@@ -41,6 +41,14 @@ public class SubscriptionBean {
 	
 		return subscriptions;
 	}
+public void submit() {
+		//System.out.println("user+   "+ description);
+		//List<Subscription>subscriptions=subscriptionServices.getAllSubscriptionsSerch(LoginBean.i,descriptionpack);
+	}
+	public void Keypress() {
+		pack.getDescription();
+		System.out.println("keypressssssssssss" );
+	}
 	
 	
 	
