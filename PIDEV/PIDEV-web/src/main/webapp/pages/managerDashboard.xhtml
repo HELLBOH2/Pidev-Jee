@@ -1,0 +1,50 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                template="/template/templateProjectManager.xhtml">
+                
+	<ui:param name="page_name" value="Dashboard" /> 
+	    <ui:define name="pageTitle">Managaer</ui:define>
+    <ui:define name="pageDetail">Project Managaer Dashboard</ui:define>
+    <ui:define name="pageContent">
+	<!-- <ui:define name="menu">  -->
+		
+			<h:form> 
+			
+			<!-- 	<h:outputText value="#{sessionScope.logger}" /> -->
+				<h:commandButton id="btn_dec" value="Logout" styleClass="btn btn-primary" action="#{loginBean.doLogout()}" />
+				
+				
+				 
+			</h:form> 
+			
+			<p> </p>
+  		<!-- 	 <h:form>
+  			 
+  			 
+  			 
+  			 	<h:commandButton id ="link_create" action = "#{managerBean.create()}" value = "create Evaluation Test"></h:commandButton> 
+  			 
+  			 	<h:message for="link_create"/>
+  			 </h:form> -->
+     		 	
+   			
+   			<p></p>
+   	<!-- 	<h:form>
+   		
+  			 <h:commandButton id="btn_Auto" action = "#{managerBean.showAuto()}" value = "show created Quiz">
+     		</h:commandButton>
+     		<h:commandButton id="btn_Auto2" action = "#{CandidateOfferBean.showAuto2()}" value = "show List of candidates">
+     		</h:commandButton>
+     		<h:message for="btn_Auto"/>
+   		</h:form> -->	
+   			
+   		 
+   			 <p></p>
+   			 
+   			
+	
+	</ui:define> 
+</ui:composition>

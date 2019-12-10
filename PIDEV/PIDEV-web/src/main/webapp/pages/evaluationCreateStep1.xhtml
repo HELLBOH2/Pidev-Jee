@@ -1,0 +1,42 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+               template="/template/templateProjectManager.xhtml">
+    <ui:define name="pageTitle">Create Evaluation Test</ui:define>
+    <ui:define name="pageDetail">Create Evaluation Test</ui:define>
+    <ui:define name="pageContent">
+
+	<ui:param name="page_name" value="Dashboard" /> 
+	<!-- <ui:define name="content"> -->
+	<link href="#{request.contextPath}/resources/css/cssEval.css" rel="stylesheet" type="text/css"></link>
+	 
+		<h:form id="step1Form" prependId="false" > 
+		
+			
+			<h3> step 1 </h3>
+			
+			<div > 
+				<h:outputText value="Description" /> 
+				<h:inputText style=" color:black" value="#{step1.description}" /> 
+				
+				 
+				 <p></p>
+				
+				 <div id="buttonContain">
+				 	<h:commandButton id="btn_step1" styleClass="btn btn-primary" value="next" action="#{step1.Step1Action()}" /> 
+					<h:message for="btn_step1"/>
+					
+				
+					
+				 </div>
+				 
+			</div> 
+			 
+		</h:form>  
+		
+		
+    	
+	</ui:define> 
+</ui:composition>

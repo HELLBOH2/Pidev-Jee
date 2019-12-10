@@ -1,0 +1,62 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                template="/template/index.xhtml">
+                
+	<ui:param name="page_name" value="test answer" /> 
+	 <ui:define name="pageTitle">Answer</ui:define>
+    <ui:define name="pageDetail">Answer The Questions </ui:define>
+       <ui:define name="pageContent">
+	<!-- <ui:define name="menu">  -->
+		<h3> Enter your answers please </h3>
+		
+			
+			<p> </p>
+			
+			
+			
+			
+			<h:form id="answerForm"  prependId="false">
+				<h:panelGrid columns="2"> 	
+					<h:form > 
+						<h:outputText style=" color:black" value="#{TestAnswer.nextQuestion.cr_Content}" />
+							<p> </p>
+						<h:selectOneRadio style=" color:black" value = "#{TestAnswer.selectedAnswer}"> 
+   							<f:selectItems value="#{TestAnswer.responsesListPerQuestionMap}"  
+   							itemValue="" /> 
+						</h:selectOneRadio>
+						
+						<h:outputText style=" color:black" value="the quesitons are finished you can confirm you answers if you want  " id="confirmText"   prependId="false" />
+						<h:commandButton id="btn_next"  styleClass="btn btn-primary" value="Next Question" action="#{TestAnswer.saveAnswer()}" />
+						
+						<p>   </p>
+						<div id="block_bott">
+							<h:commandButton id="btn_lanch" styleClass="btn btn-primary"  value="LanchTest " action="#{TestAnswer.LanchTest()}" />
+							<h:commandButton id="btn_cancel" styleClass="btn btn-primary"  value="cancel " action="#{TestAnswer.cancelAnswer()}" />  
+						</div>
+						<p></p>
+						
+				
+						
+					</h:form>
+			 	</h:panelGrid>
+			
+			<p></p>
+			<p></p>
+			<p></p>
+			
+			</h:form>
+			
+			
+		
+  			 
+     		 	
+   			
+   		
+   			 
+   			
+	
+	</ui:define> 
+</ui:composition>

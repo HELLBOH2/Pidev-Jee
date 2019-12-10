@@ -1,0 +1,46 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                template="/template/index.xhtml">
+	<ui:param name="page_name" value="test answer" /> 
+		 <ui:define name="pageTitle">Answer</ui:define>
+    <ui:define name="pageDetail">Answer The Questions </ui:define>
+       <ui:define name="pageContent">
+	<!-- <ui:define name="menu">  -->
+		<h3> Enter your answers please  </h3>
+	
+			
+			<p> </p>
+			
+			
+			
+			
+			<h:form id="confirmAnswer"  prependId="false">
+				<h:panelGrid columns="2"> 	
+				<h:form>
+					<h3> Do you confirm your answers ?</h3><br />
+					<p>   </p>
+					<div id="block_bott">
+         			<h:commandButton id="cance_answ"   styleClass="btn btn-primary" prependId="false" value="cancel" action="#{AnswerToConfirm.cancelAnswer()}" />  
+         			<h:commandButton id="conf_answ"   styleClass="btn btn-primary" prependId="false" value="confirm" action="#{AnswerToConfirm.confirmAnswers()}" />  
+					</div>
+					</h:form>
+			 	</h:panelGrid>
+			
+			</h:form>
+			
+			
+			
+			
+		
+  			 
+     		 	
+   			
+   		
+   			 
+   			
+	
+	</ui:define> 
+</ui:composition>

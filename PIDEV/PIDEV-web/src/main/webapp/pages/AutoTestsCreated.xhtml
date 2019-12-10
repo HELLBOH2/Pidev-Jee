@@ -1,0 +1,51 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+               template="/template/templateProjectManager.xhtml">
+    <ui:define name="pageTitle">Tests</ui:define>
+    <ui:define name="pageDetail">List Of Tests Created</ui:define>
+    <ui:define name="pageContent">
+
+	<ui:param name="page_name" value="Dashboard" /> 
+<!-- 	<ui:define name="content"> -->
+		
+		<h:panelGroup columns="3"> 
+		
+			<h:form> 
+			
+				<h:dataTable value="#{managerBean.listTorender}" var="test" border="1"
+				>
+				
+					<h:column>
+						<f:facet name="header">
+							<h:outputText value="Description" />
+						</f:facet>
+						<h:outputText style=" color:black" value="#{test.ET_Description}" />
+					</h:column>
+					<h:column>
+						<f:facet name="header">
+							<h:outputText value="Number Of Questions" />
+						</f:facet>
+						<h:outputText style=" color:black" value="#{test.criterias.size()}" />
+					</h:column>
+
+					<h:column>
+						<f:facet name="header">
+							<h:outputText value="Decide !" />
+						</f:facet>
+						<h:commandButton id="edit_btn" styleClass="btn btn-primary" value="edit" action="#{managerBean.EditQuiz(test)}" />
+						<h:commandButton id="delete_btn" styleClass="btn btn-primary" value="delete" action="#{managerBean.DeleteQuiz(test)}" />
+					</h:column>
+
+				
+
+				</h:dataTable> 
+			</h:form> 
+		</h:panelGroup>
+   			 
+    	
+    	
+	</ui:define> 
+</ui:composition>

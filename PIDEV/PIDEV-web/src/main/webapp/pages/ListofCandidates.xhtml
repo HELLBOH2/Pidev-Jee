@@ -1,0 +1,65 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+               template="/template/templateProjectManager.xhtml">
+    <ui:define name="pageTitle">List of  Candidates</ui:define>
+    <ui:define name="pageDetail">List of  Candidates</ui:define>
+    <ui:define name="pageContent">
+
+	<ui:param name="page_name" value="Dashboard" /> 
+<!-- 	<ui:define name="content"> -->
+	
+		<h:panelGroup columns="3"> 
+		
+			<h:form> 
+			
+				 <h:dataTable value="#{CandidateOfferBean.listTorender}" var="test" border="1"
+				styleClass = "AutoTestTable"
+   				headerClass = "TestTableHeader"
+   				rowClasses = "TestTableOddRow,TestTableEvenRow">
+			
+					<h:column>
+						<f:facet name="header">
+							<h:outputText value="Status" />
+						</f:facet>
+						<h:outputText style=" color:black" value="#{test.status}" />
+					</h:column>
+					
+					
+						<h:column>
+						<f:facet name="header">
+							<h:outputText value="Email of Candidate" />
+						</f:facet>
+						<h:outputText style=" color:black" value="#{test.aspNetUser.email}" />
+					</h:column>
+					
+						<h:column>
+						<f:facet name="header">
+							<h:outputText value="Title of Job" />
+						</f:facet>
+						<h:outputText style=" color:black" value="#{test.jobOffer.title}" />
+					</h:column>
+			
+				
+
+					<h:column>
+						<f:facet name="header">
+							<h:outputText value="Invite To Quiz" />
+						</f:facet>
+						<h:commandButton id="Invite_Quiz_btn" styleClass="btn btn-primary" value="Invite_Quiz" action="#{CandidateOfferBean.shoicetheQuiz(test)}" />
+					
+					</h:column>
+
+				
+
+				</h:dataTable> 
+				 
+			</h:form> 
+		</h:panelGroup>
+   			 
+    	
+    	
+	</ui:define> 
+</ui:composition>

@@ -1,0 +1,62 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+               template="/template/templateProjectManager.xhtml">
+    <ui:define name="pageTitle">Create Evaluation Test</ui:define>
+    <ui:define name="pageDetail">Create Evaluation Test</ui:define>
+    <ui:define name="pageContent">
+
+	<ui:param name="page_name" value="Dashboard" /> 
+	<!-- <ui:define name="content"> -->
+	<link href="#{request.contextPath}/resources/css/cssEval.css" rel="stylesheet" type="text/css"></link>
+	 
+		 
+		
+		
+		
+		
+	  
+		<h:form id="step3Form"    prependId="false" >
+				<h3> step 2 </h3>
+			
+			<h:panelGrid columns="2"> 
+				<h:outputText value=" question" /> 
+				<h:inputText style=" color:black" value="#{step3.questionContent}" />
+				<h:outputText value=" affect a coefficient to this question" /> 
+				<h:inputText style=" color:black" value="#{step3.coeff}" />
+				<h:outputText value=" define the number of its possible responses" /> 
+				<h:inputText style=" color:black" value="#{step3.numberPossibleAnswers}" /> 
+				
+				<h:commandButton styleClass="btn btn-primary" value = "Confirm question" action = "#{step3.Step3Action()}" />
+				<h:commandButton styleClass="btn btn-primary" value = "Questions and responses are ready" action = "#{step3.Confirm()}" /> 
+				
+			</h:panelGrid>
+		</h:form> 
+		
+		
+		
+		
+		
+		 
+		 
+		 
+		
+				
+		
+		
+			
+		 
+		
+		
+		
+		
+				
+		 
+   	
+    
+    	
+    	
+	</ui:define> 
+</ui:composition>

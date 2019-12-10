@@ -1,0 +1,66 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+               template="/template/templateProjectManager.xhtml">
+    <ui:define name="pageTitle">Create Evaluation Test</ui:define>
+    <ui:define name="pageDetail">Create Evaluation Test</ui:define>
+    <ui:define name="pageContent">
+
+	<ui:param name="page_name" value="Dashboard" /> 
+<!-- 	<ui:define name="content"> -->
+	<link href="#{request.contextPath}/resources/css/cssEval.css" rel="stylesheet" type="text/css"></link>
+	 
+		 
+		
+		
+	
+		
+	  
+		<h:form id="step3FormAnswer"  prependId="false">
+			<h3> step 3 </h3>
+			<h:panelGrid columns="2"> 	
+				<h:outputText value=" enter your responses" />
+				<h:outputText style=" color:black" value="#{sessionScope.testIncreation}" />
+			 	<ui:repeat var="a" value="#{step3.responses}">
+			 		<h:outputText value="#{a.pr_Description}" /> 
+					<h:inputText style=" color:black" value="#{a.pr_Content}" /> 
+					
+					<h:outputText value="score of this resposne" /> 
+					<h:inputText style=" color:black" value="#{a.pr_score}" /> 
+					<p> </p>
+				</ui:repeat>
+				
+				<h:commandButton styleClass="btn btn-primary" value = "confirm reponses and create another question" action = "#{step3.ConfirmAnswers()}" />
+				 
+				
+			</h:panelGrid>
+			
+		</h:form>
+		
+		
+		
+		
+		
+		 
+		 
+		 
+		
+				
+		
+		
+			
+		 
+		
+		
+		
+		
+				
+		 
+   	
+    
+    	
+    	
+	</ui:define> 
+</ui:composition>

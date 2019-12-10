@@ -1,0 +1,45 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                template="/template/index.xhtml">
+	<ui:param name="page_name" value="Dashboard" /> 
+		 <ui:define name="pageTitle">Candidate</ui:define>
+    <ui:define name="pageDetail">Candidate Dashboard </ui:define>
+       <ui:define name="pageContent">
+	<!-- <ui:define name="menu">  -->
+		
+
+			
+				<h:form> 
+			
+			<!-- 	<h:outputText value="#{sessionScope.logger}" /> -->
+				<h:commandButton id="btn_dec" value="Logout" styleClass="btn btn-primary" action="#{loginBean.doLogout()}" />
+				
+				
+				 
+			</h:form> 
+  		
+     		 	
+   			
+   			<p></p>
+   			<h:form> 
+  			
+  		
+  			  
+  			<!--   <h:commandButton id="btn_lanch" styleClass="btn btn-primary"  
+  			  value="Show the tests affected To me " action="#{collabDash.Show360EvaluationsToWhichInvited()}" /> -->
+  			  
+  			  
+   			 </h:form>
+   			 <p></p>
+   			 
+   			 
+   		
+   			 <p></p>
+   			 
+   			
+	
+	</ui:define> 
+</ui:composition>

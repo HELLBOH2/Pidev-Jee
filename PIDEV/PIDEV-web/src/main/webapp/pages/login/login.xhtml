@@ -1,0 +1,71 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:jsf="http://xmlns.jcp.org/jsf"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	template="/pages/template/templateLogin.xhtml">
+	
+	
+	<ui:define name="title">login</ui:define>
+	<ui:define name="content">
+		<h1>login page</h1>
+		
+		
+					 <br />			 <br />
+		
+		         <div class="section-title center">
+                        <h2><strong>Login</strong></h2>
+                        <div class="line">
+                             <hr/>
+                        </div>
+                        <div class="clearfix"></div>
+                        <big> <em>Welcome</em></big>            
+                    </div>
+                    
+                    
+                    
+                    
+                    
+              <h:form>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Password</label>
+                           
+                                
+                                	<h:inputSecret  class="form-control requiredField name input-label"  id="Password" value ="#{loginBean.password}">
+				   <f:validateLength id="Password"   />  
+				   </h:inputSecret>
+                                
+                                
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Login</label>
+                       
+                                    
+                              
+                                      	<h:inputText type="Email" value ="#{loginBean.login}" class="form-control requiredField email
+                                     input-label" id="mail" name="mail" placeholder="Votre Adresse Mail" />
+                                </div>
+                            </div>
+                        </div>
+                  
+            
+                       <!--  <h:commandLink class="btn tf-btn btn-default" action="register" value="signUp" /> -->
+                        
+                        			<h:commandButton class="btn btn-success" action="#{loginBean.doLogin()}" value="login" />
+			 <br />			 <br />			 <br />			 <br />			 <br />			 <br />			 <br />
+			<h:messages style = "color:red;margin:8px;"  /> 
+                        
+                        
+                	</h:form>
+                    
+        
+	
+	</ui:define>
+
+
+</ui:composition>

@@ -1,0 +1,61 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+               template="/template/templateProjectManager.xhtml">
+    <ui:define name="pageTitle">Tests</ui:define>
+    <ui:define name="pageDetail">Update your Test</ui:define>
+    <ui:define name="pageContent">
+	
+		<ui:param name="page_name" value="Dashboard" /> 
+<!-- 	<ui:define name="content"> -->
+	
+		<h:panelGroup columns="3"> 
+		<h:form> 
+		 <div class="col-lg-8 col-lg-offset-2">
+                        <p:growl id="msgs" showDetail="true"/>
+
+                        
+                            <h:outputLabel value="Description:"/>
+                            <h:inputText  style=" color:black" value="#{managerBean.description}" />
+                       
+                    </div>
+                   
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <h:panelGrid columns="2">
+                            <h:commandButton value="Cancel" action="#{managerBean.showAuto()}"
+                                             styleClass="btn btn-warning"/>
+                            <h:commandButton value="Save" action="#{managerBean.saveEditchanges()}"
+                                             styleClass="btn btn-success"/>
+                        </h:panelGrid>
+                        <p:growl id="messages" showDetail="true" life="2000"/>
+                    </div>
+		</h:form>
+		</h:panelGroup>
+		
+		
+		
+	</ui:define>	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</ui:composition>			
